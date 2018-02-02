@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a5d15f2051d09644ebccdef0f54b7bbb
+timeCreated: 1517549063
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - minion: {fileID: 1769743504851886, guid: 180a5e17b76f813429abad75b0ad928c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

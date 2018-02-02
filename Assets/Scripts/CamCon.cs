@@ -11,7 +11,7 @@ public class CamCon : NetworkBehaviour {
 	public GameObject camaraYaw;
 	// Use this for initialization
 	void Start () {
-		camSpeed = 50f;
+		camSpeed = 30f;
 	}
 	// Update is called once per frame
 	void Update () {
