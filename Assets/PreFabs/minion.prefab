@@ -141,8 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagship: {fileID: 0}
-  x: 0
-  y: 0
+  xy: {x: 0, y: 0}
 --- !u!114 &114237742758878314
 MonoBehaviour:
   m_ObjectHideFlags: 1

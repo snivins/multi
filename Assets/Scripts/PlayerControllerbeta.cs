@@ -40,7 +40,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 		if (Input.GetButton ("Fire2")) {
 
 			Cursor.lockState = CursorLockMode.None;
-			flota [0].GetComponent<follower> ().x *= -1;
+			flota [0].GetComponent<follower> ().xy.x *= -1;
 		} else 
 			Cursor.lockState = CursorLockMode.Locked;
 		//camara.rotation = transform.rotation;
@@ -132,7 +132,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 			}
 		}*/
 		for (int i= 1; i< 11;i++){
-			for (int j= 1; j< 6;j++){
+			for (int j= 1; j< 11;j++){
 				GameObject foll = Instantiate (follower, transform.position + transform.right * 10f * i + transform.up * 10f * j, transform.rotation);
 				foll.GetComponent<follower> ().setFlagship (transform,10f * i, 10f * j);
 				flota.Add (foll);
