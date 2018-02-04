@@ -1,12 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControllerbeta.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ServerSpawner.cs">
     <Files>
       <File FileName="..\nave prueba\Assets\preLaser.cs" Line="1" Column="1" />
       <File FileName="..\nave prueba\Assets\laserin.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControllerbeta.cs" Line="38" Column="41" />
-      <File FileName="Assets\Scripts\follower.cs" Line="32" Column="15" />
-      <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HealthBar.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ServerSpawner.cs" Line="1" Column="1" />
@@ -18,6 +15,10 @@
       <File FileName="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CamCon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\pew.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerControllerbeta.cs" Line="63" Column="5" />
+      <File FileName="Assets\Scripts\follower.cs" Line="1" Column="1" />
+      <File FileName="Assets\SampleScenes\Scripts\NetworkGameManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114237742758878314}
   m_Layer: 0
   m_Name: minion
-  m_TagString: Untagged
+  m_TagString: follower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagship: {fileID: 0}
   xy: {x: 0, y: 0}
+  alive: 1
 --- !u!114 &114237742758878314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnable: 0
+  nave: 1
   health: 50
 --- !u!114 &114349792621915800
 MonoBehaviour:

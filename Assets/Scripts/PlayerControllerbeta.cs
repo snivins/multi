@@ -8,9 +8,12 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	public GameObject follower;
 	public GameObject bullet;
 	public Transform camara;
+	public Transform show;
 	public List<GameObject> flota;
 	[SyncVar]
 	public Color colorino;
+	[SyncVar]
+	public string nick;
 	private float rof;//rate of fire
 	// Use this for initialization
 	void Start () {
@@ -18,10 +21,14 @@ public class PlayerControllerbeta : NetworkBehaviour {
 		Cursor.lockState = CursorLockMode.Locked;
 		//if (isLocalPlayer)
 		//	CmdSpawn();
-		if (isLocalPlayer)
-			CmdSpawn();
+		if (isLocalPlayer) {
+			//name = "player";
+			//nick = "player";
+			CmdSpawn ();
+		}
 		rof = Time.time;
-		GetComponent<MeshRenderer> ().material.color = colorino;
+		show = transform.GetChild (0);
+		show.GetComponent<MeshRenderer> ().material.color = colorino;
 	}
 	// Update is called once per frame
 	/*
@@ -34,28 +41,37 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	void Update () {
 		if (!isLocalPlayer)
 			return;
-
+		/*
+		if (flota.Count < 1) {
+			foreach (GameObject nave in GameObject.FindGameObjectsWithTag("follower")) {
+				Debug.Log (nave.GetComponent<follower> ().namerino);
+			}
+		}*/
 		//camara.transform.parent = transform;
 		camara.position = transform.position;
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Input.GetButton ("Fire2")) {
 
 			Cursor.lockState = CursorLockMode.None;
-			flota [0].GetComponent<follower> ().xy.x *= -1;
-		} else 
+			show.LookAt (ray.GetPoint(1000f));
+		} else {
 			Cursor.lockState = CursorLockMode.Locked;
+			transform.LookAt (ray.GetPoint (1000f));
+			show.LookAt (ray.GetPoint (1000f));
+		}
 		//camara.rotation = transform.rotation;
 		var x = Input.GetAxis("Horizontal")*0.1f;
 		var z = Input.GetAxis("Vertical")*0.1f;
 
 		transform.Translate(x, 0, z);
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			CmdFire ();
+			//CmdFire ();
+			CmdDance ();
 		}		
 		if (Input.GetButton ("Fire1")) {
 			CmdFireBullet ();
+
 		}
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		transform.LookAt (ray.GetPoint(1000f));
 		//Debug.Log (Camera.main.ScreenPointToRay (Input.mousePosition));
 	}
 	[Command]
@@ -73,18 +89,33 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	}
 
 	[Command]
+	void CmdDance() {
+		foreach (GameObject nave in flota) {
+			nave.GetComponent<follower> ().xy.x = nave.GetComponent<follower> ().xy.x * -1;
+		}
+	}
+	[Command]
 	void CmdFireBullet() {
 		if (rof > Time.time)
 			return;
 
 		rof = Time.time + 0.3f;
-		GameObject bull = Instantiate (bullet, transform.position + transform.forward + 
+		GameObject bull = Instantiate (bullet, transform.position + show.forward * 10f + 
 												transform.up * Random.Range(-0.5f,0.5f) + 
 												transform.right * Random.Range(-0.5f,0.5f),	
-												transform.rotation);
-		bull.GetComponent<Rigidbody> ().velocity = transform.forward * 100f;
+												show.rotation);
+		bull.GetComponent<Rigidbody> ().velocity = show.forward * 100f;
 		NetworkServer.Spawn (bull);
 		Destroy (bull, 2.0f);
+		foreach (GameObject nave in flota) {
+			bull = Instantiate (bullet, nave.transform.position + nave.transform.forward * 10f + 
+				nave.transform.up * Random.Range(-0.5f,0.5f) + 
+				nave.transform.right * Random.Range(-0.5f,0.5f),	
+				nave.transform.rotation);
+			bull.GetComponent<Rigidbody> ().velocity = nave.transform.forward * 100f;
+			NetworkServer.Spawn (bull);
+			Destroy (bull, 2.0f);
+		}
 	}
 
 
@@ -92,7 +123,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	void CmdSpawnZeta() {
 		GameObject foll = Instantiate (follower, transform.position + transform.right * 10f + transform.up * 10f, transform.rotation);
 		//NetworkServer.SpawnWithClientAuthority (foll, gameObject);
-		foll.GetComponent<follower> ().setFlagship (transform,10f, 10f);
+//		foll.GetComponent<follower> ().setFlagship (transform,10f, 10f);
 		flota.Add (foll);
 		//foll.name = "follower" + GameObject.FindGameObjectsWithTag ("Player").Length;
 		//NetworkServer.SpawnWithClientAuthority (foll, connectionToClient);
@@ -100,7 +131,6 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	}
 	[Command]
 	void CmdSpawn() {
-
 		/*foreach (GameObject player in GameObject.FindGameObjectsWithTag ("Player")) {
 			for (int i= 1; i< 6;i++){
 				for (int j= 1; j< 6;j++){
@@ -131,23 +161,28 @@ public class PlayerControllerbeta : NetworkBehaviour {
 				}
 			}
 		}*/
-		for (int i= 1; i< 11;i++){
-			for (int j= 1; j< 11;j++){
+		int iderino = 0;
+		for (int i= 1; i< 7;i++){
+			for (int j= 1; j< 3;j++){
 				GameObject foll = Instantiate (follower, transform.position + transform.right * 10f * i + transform.up * 10f * j, transform.rotation);
-				foll.GetComponent<follower> ().setFlagship (transform,10f * i, 10f * j);
+				foll.GetComponent<follower> ().setFlagship (transform,10f * i, 10f * j, nick, iderino);
 				flota.Add (foll);
+				iderino++;
 				NetworkServer.Spawn(foll);
 				foll = Instantiate (follower, transform.position + transform.right * 10f * i + transform.up * 10f * -j, transform.rotation);
-				foll.GetComponent<follower> ().setFlagship (transform,10f * i, 10f * -j);
+				foll.GetComponent<follower> ().setFlagship (transform,10f * i, 10f * -j, nick, iderino);
 				flota.Add (foll);
+				iderino++;
 				NetworkServer.Spawn(foll);
 				foll = Instantiate (follower, transform.position + transform.right * 10f * -i + transform.up * 10f * j, transform.rotation);
-				foll.GetComponent<follower> ().setFlagship (transform,10f * -i, 10f * j);
+				foll.GetComponent<follower> ().setFlagship (transform,10f * -i, 10f * j, nick, iderino);
 				flota.Add (foll);
+				iderino++;
 				NetworkServer.Spawn(foll);
 				foll = Instantiate (follower, transform.position + transform.right * 10f * -i + transform.up * 10f * -j, transform.rotation);
-				foll.GetComponent<follower> ().setFlagship (transform,10f * -i, 10f * -j);
+				foll.GetComponent<follower> ().setFlagship (transform,10f * -i, 10f * -j, nick, iderino);
 				flota.Add (foll);
+				iderino++;
 				NetworkServer.Spawn(foll);
 			}
 		}
