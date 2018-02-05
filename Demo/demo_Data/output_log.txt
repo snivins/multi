@@ -1,0 +1,86 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     4011 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.017 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.649014 ms
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 754 -> priority: 1 
+  Thread -> id: 4ec -> priority: 1 
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     4011 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\vins\Documents\multi\Demo\demo_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.018 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 481)
+
+<RI> Initialized touch support.
+UnloadTime: 1.568150 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 14c8 -> priority: 1 
+  Thread -> id: 13fc -> priority: 1 
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 481)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 481)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 481)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.839589 ms
+UnloadTime: 1.366921 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 995.
+Total: 0.836326 ms (FindLiveObjects: 0.040121 ms CreateObjectMapping: 0.025192 ms MarkObjects: 0.763859 ms  DeleteObjects: 0.006842 ms)
+
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1835.
+Total: 1.542646 ms (FindLiveObjects: 0.094860 ms CreateObjectMapping: 0.043231 ms MarkObjects: 1.389004 ms  DeleteObjects: 0.013995 ms)
+
