@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 134253858}
   m_Layer: 0
   m_Name: ServerSpawner
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1736851771907542, guid: 0ca81e3df3afd234f8727f6fcc5306ca, type: 2}
   texto: 
+  naves: 0
   estado: {fileID: 111565176}
 --- !u!114 &134253859
 MonoBehaviour:

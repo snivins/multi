@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ServerSpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControllerbeta.cs">
     <Files>
       <File FileName="..\nave prueba\Assets\preLaser.cs" Line="1" Column="1" />
       <File FileName="..\nave prueba\Assets\laserin.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HealthBar.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ServerSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bullet.cs" Line="13" Column="21" />
+      <File FileName="Assets\Scripts\HealthBar.cs" Line="43" Column="34" />
+      <File FileName="Assets\Scripts\ServerSpawner.cs" Line="25" Column="40" />
       <File FileName="Assets\Lobby\Scripts\Lobby\LobbyManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Lobby\Scripts\Lobby\LobbyPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Lobby\Scripts\Lobby\LobbyMainMenu.cs" Line="1" Column="1" />
@@ -15,8 +15,8 @@
       <File FileName="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CamCon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\pew.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControllerbeta.cs" Line="63" Column="5" />
+      <File FileName="Assets\Scripts\Health.cs" Line="22" Column="7" />
+      <File FileName="Assets\Scripts\PlayerControllerbeta.cs" Line="123" Column="30" />
       <File FileName="Assets\Scripts\follower.cs" Line="1" Column="1" />
       <File FileName="Assets\SampleScenes\Scripts\NetworkGameManager.cs" Line="1" Column="1" />
     </Files>

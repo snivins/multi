@@ -14,6 +14,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	public Color colorino;
 	[SyncVar]
 	public string nick;
+	public bool syncGui;
 	private float rof;//rate of fire
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 			//name = "player";
 			//nick = "player";
 			CmdSpawn ();
+			//GameObject.FindGameObjectWithTag ("spawner").GetComponent<ServerSpawner> ().playerLocal = nick;
 		}
 		rof = Time.time;
 		show = transform.GetChild (0);
@@ -34,13 +36,20 @@ public class PlayerControllerbeta : NetworkBehaviour {
 	/*
 	public override void OnStartLocalPlayer(){
 
-		CmdSpawnZeta();
+		//CmdSpawnZeta();
+		if (isLocalPlayer)
+			Debug.Log (GameObject.FindGameObjectWithTag ("spawner") == null);
+			//GameObject.FindGameObjectWithTag ("spawner").GetComponent<ServerSpawner> ().playerLocal = nick;
 	}
-	*/
 
+*/
 	void Update () {
 		if (!isLocalPlayer)
 			return;
+		if (!syncGui && GameObject.FindGameObjectWithTag ("spawner") != null) {
+			GameObject.FindGameObjectWithTag ("spawner").GetComponent<ServerSpawner> ().playerLocal = nick;
+			syncGui = true;
+		}
 		/*
 		if (flota.Count < 1) {
 			foreach (GameObject nave in GameObject.FindGameObjectsWithTag("follower")) {
@@ -106,7 +115,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 												show.rotation);
 		bull.GetComponent<Rigidbody> ().velocity = show.forward * 100f;
 		NetworkServer.Spawn (bull);
-		Destroy (bull, 2.0f);
+		Destroy (bull, 4.0f);
 		foreach (GameObject nave in flota) {
 			bull = Instantiate (bullet, nave.transform.position + nave.transform.forward * 10f + 
 				nave.transform.up * Random.Range(-0.5f,0.5f) + 
@@ -114,7 +123,7 @@ public class PlayerControllerbeta : NetworkBehaviour {
 				nave.transform.rotation);
 			bull.GetComponent<Rigidbody> ().velocity = nave.transform.forward * 100f;
 			NetworkServer.Spawn (bull);
-			Destroy (bull, 2.0f);
+			Destroy (bull, 4.0f);
 		}
 	}
 

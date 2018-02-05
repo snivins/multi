@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +9,11 @@ public class ServerSpawner : NetworkBehaviour {
 	public GameObject target;
 	[SyncVar]
 	public string texto;
-	[SyncVar]
-	public int naves;
+
+
+	public string playerLocal;
+
+
 	public Text estado;
 	// Use this for initialization
 	void Start () {
@@ -17,18 +21,24 @@ public class ServerSpawner : NetworkBehaviour {
 			texto = "cargando";
 			InvokeRepeating ("setTexterino" , 1f, 5f);
 		}
+		playerLocal = "";
+		InvokeRepeating ("setTusxter" , 5f, 1f);
 	}
-	void Update () {
-		estado.text = texto;
+	void setTusxter () {
+		try {
+			string numNaves = texto.Substring (texto.IndexOf (playerLocal) + playerLocal.Length).Remove (texto.Substring (texto.IndexOf (playerLocal) + playerLocal.Length).IndexOf (playerLocal));
+			estado.text = playerLocal + " tiene " + numNaves;
+		} catch (Exception e) {
+			Debug.LogException (e,this);
+		}
 	}
 	void setTexterino (){
 		string numa = "Estado :";
 		foreach (GameObject nave in GameObject.FindGameObjectsWithTag ("Player")) {
 			numa += nave.GetComponent<PlayerControllerbeta> ().nick;
-			numa += " tiene ";
 			numa += nave.GetComponent<PlayerControllerbeta> ().flota.Count;
-			naves = nave.GetComponent<PlayerControllerbeta> ().flota.Count;
-			numa += " / ";
+			//naves = nave.GetComponent<PlayerControllerbeta> ().flota.Count;
+			numa += nave.GetComponent<PlayerControllerbeta> ().nick;
 		}
 		texto = numa;
 	}
@@ -39,7 +49,7 @@ public class ServerSpawner : NetworkBehaviour {
 		//base.OnStartLocalPlayer ();
 
 		for (int i = 0; i < 20; i++) {
-			GameObject tgt = Instantiate (target, new Vector3(Random.Range(-50f,50f),Random.Range(-50f,50f),Random.Range(-50f,50f)), transform.rotation);
+			GameObject tgt = Instantiate (target, new Vector3(UnityEngine.Random.Range(-50f,50f),UnityEngine.Random.Range(-50f,50f),UnityEngine.Random.Range(-50f,50f)), transform.rotation);
 			NetworkServer.Spawn (tgt);
 		}
 		/*

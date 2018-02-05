@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class Health : NetworkBehaviour {
-	public const int maxHealth = 100;
+	public const int maxHealth = 200;
+	public const int maxHealthFollower = 100;
 	public bool respawnable;
 	public bool nave;
 	[SyncVar]
@@ -17,9 +18,10 @@ public class Health : NetworkBehaviour {
 		health -= dmg;
 		if (health <= 0) {
 			if (respawnable) {
-				health = maxHealth;
-				RpcRespawn ();
+				health = 0;
+				//RpcRespawn ();
 			} else if (nave){
+				health = 0;
 				//RpcDed ();
 				gameObject.GetComponent<follower> ().flagship.GetComponent<PlayerControllerbeta>().flota.Remove (gameObject);
 				gameObject.GetComponent<follower> ().alive = false;
